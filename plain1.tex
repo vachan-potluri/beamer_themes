@@ -1,0 +1,34 @@
+\documentclass[10pt, xcolor={dvipsnames}]{beamer}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamercolor{block title}{fg=blue,bg=blue!25}
+\setbeamercolor{block body}{fg=black,bg=blue!10}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+    \hfill
+    \begin{tikzpicture}
+        \node[circle, inner sep=2pt, fill=blue, anchor=center] at (0em,0em) {\bfseries\color{white}\insertframenumber{}/\inserttotalframenumber};
+    \end{tikzpicture}
+    \hspace{1em}
+    \vspace{2em}
+}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate items}[circle]
+
+\setbeamersize{text margin left=2em,text margin right=2em}
+\setlength{\leftmargini}{1.5em}
+\setlength{\leftmarginii}{1em}
+
+\title[]{Plain format with page numbers}
+\author[]{Vachan Potluri}
+\date{\today}
+
+\begin{document}
+\input{common_content}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass[10pt, xcolor={dvipsnames}]{beamer}
+\usetheme{CambridgeUS}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\title{Cambridge US style with headline and footline}
+\subtitle{Colors are all in green shades}
+\author{Vachan Potluri}
+\date{\today}
+
+\makeatletter
+\setbeamercolor{structure}{fg=black,bg=green}
+\setbeamercolor{palette primary}{use=structure,fg=structure.bg!20!black,bg=structure.bg!10!white!85!black} % bottom right block
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.bg!60!black} % bottom middle block
+\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=structure.bg!30!black} % bottom left block
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.bg!50!black}
+\setbeamercolor{block body}{use=structure,fg=black,bg=structure.bg!10}
+
+\setbeamercolor{frametitle}{parent=palette primary}
+
+\setbeamercolor{title}{parent=frametitle}
+
+\setbeamercolor{item projected}{use=structure,fg=black,bg=structure.bg} % changes only enumerate color. \setbeamercolor{enumerate item}{...} wont work
+\setbeamercolor{subitem projected}{fg=white,bg=structure.bg!40!black} % changes only enumerate color
+\setbeamercolor{itemize item}{fg=structure.bg!60!black} % changes only itemize color
+\setbeamercolor{itemize subitem}{fg=structure.bg!30!black} % changes only itemize color
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{navigation symbols}{}
+\makeatother
+
+\setlength{\leftmargini}{2em}
+\setlength{\leftmarginii}{1em}
+
+\begin{document}
+    \input{common_content}
+\end{document}

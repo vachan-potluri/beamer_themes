@@ -1,0 +1,97 @@
+{
+    % suppress footline for title page
+    \setbeamertemplate{footline}{}
+    \frame{\titlepage}
+}
+
+\section{Lists}
+\begin{frame}{Lists}
+    Some text
+    \begin{itemize}
+        \item Item
+        \begin{itemize}
+            \item Subitem
+        \end{itemize}
+    \end{itemize}
+    \begin{enumerate}
+        \item Item
+        \begin{enumerate}
+            \item Subitem
+        \end{enumerate}
+        \item \alert{Alerted item}
+    \end{enumerate}
+\end{frame}
+
+\section{Blocks}
+\begin{frame}{Blocks}
+    \begin{block}{Block title}
+        Block content
+    \end{block}
+    \begin{example}
+        Example content
+    \end{example}
+    \begin{theorem}
+        Theorem content
+    \end{theorem}
+    \begin{proof}
+        Theorem's proof
+    \end{proof}
+\end{frame}
+
+\begin{frame}{Blocks with lists and figures}
+    \begin{columns}
+        \begin{column}{0.45\linewidth}
+            \begin{block}{Figure block}
+                \begin{figure}
+                    \includegraphics[width=0.5\linewidth]{example-image-a}
+                    \caption{Figure caption}
+                \end{figure}
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\linewidth}
+            \begin{block}{List block}
+                \begin{itemize}
+                    \item Item
+                    \begin{itemize}
+                        \item Subitem
+                    \end{itemize}
+                    \item \alert{Alerted Item}
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Math}
+\begin{frame}{Math}
+    \begin{align}
+        y &= mx + c\\
+        p &= \rho R T
+    \end{align}
+\end{frame}
+
+\section{Figures and tables}
+\subsection{Figures}
+\begin{frame}{Figures}
+    \begin{figure}
+        % requires mwe package to be installed, not necessary to load
+        % https://tex.stackexchange.com/questions/44195/placeholder-for-figure-includegraphics
+        \includegraphics[width=0.5\linewidth]{example-image-a}
+        \caption{Figure caption}
+    \end{figure}
+\end{frame}
+
+\subsection{Tables}
+\begin{frame}{Tables}
+    \begin{table}
+        \caption{Table caption}
+        \begin{tabular}{ll}
+            \toprule
+            Column 1 & Column 2\\
+            \midrule
+            Row 1, Column 1 & Row 1, Column 2\\
+            Row 2, Column 1 & Row 2, Column 2\\            
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
