@@ -1,0 +1,61 @@
+\documentclass[10pt, xcolor={dvipsnames}]{beamer}
+\usetheme{CambridgeUS}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\title{Cambridge US style with headline and no footline}
+\subtitle{Colors are taken from green color palettes here: \url{https://colorhunt.co/palettes/blue}}
+\author{Vachan Potluri}
+\date{\today}
+
+\definecolor{structurebg}{HTML}{002B5B}
+\definecolor{primary}{HTML}{D2DAFF}
+\definecolor{secondary}{HTML}{4C6793}
+\definecolor{tertiary}{HTML}{002B5B}
+\definecolor{alertfg}{HTML}{D800A6}
+\definecolor{blocktitlebg}{HTML}{5C2E7E}
+\definecolor{blocktitlefg}{HTML}{FFFF00}
+\definecolor{blockbodybg}{HTML}{ABD9FF}
+
+\makeatletter
+\setbeamercolor{structure}{fg=black,bg=structurebg}
+\setbeamercolor{palette primary}{use=structure,fg=structure.bg!20!black,bg=primary} % bottom right block
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=secondary} % bottom middle block
+\setbeamercolor{palette tertiary}{use=structure,bg=tertiary,fg=white} % bottom left block
+
+\setbeamercolor{block title}{fg=blocktitlefg,bg=blocktitlebg}
+\setbeamercolor{block body}{fg=black,bg=blockbodybg!10}
+
+\setbeamercolor{frametitle}{parent=palette primary}
+\setbeamercolor{title}{parent=frametitle} % presentation title
+
+\setbeamercolor{item projected}{fg=white,bg=structure.bg!50!black} % changes only enumerate color
+\setbeamercolor{subitem projected}{use=structure,fg=black,bg=structure.bg!50} % changes only enumerate color. \setbeamercolor{enumerate item}{...} wont work
+\setbeamercolor{itemize item}{fg=structure.bg!50!black} % changes only itemize color
+\setbeamercolor{itemize subitem}{fg=structure.bg!50} % changes only itemize color
+
+\setbeamercolor{alerted text}{fg=alertfg}
+\setbeamercolor{caption name}{fg=alerted text.fg}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}{%
+%    \hfill%
+%    \begin{tikzpicture}
+%        \node[rectangle, inner sep=1pt, fill=primary, anchor=center] at (0em,0em) {\textcolor{structurebg!20!black}{\tiny\insertframenumber{}/\inserttotalframenumber}};
+%    \end{tikzpicture}
+%    \hspace{-0.35em}
+%    \vspace{0.25em}
+%}
+\makeatother
+
+\setlength{\leftmargini}{2em}
+\setlength{\leftmarginii}{1em}
+
+\begin{document}
+    \input{common_content}
+\end{document}
