@@ -1,0 +1,108 @@
+\RequirePackage{pgfopts}
+\RequirePackage{tikz}
+
+\mode<presentation>
+
+\pgfkeys{%
+    /beamerthemeMumbai/.cd,
+        % 'infolines' option: have both headline and footline
+        infolines/.code={\useoutertheme{infolines}},
+        % 'headline' option: only have headline
+        headline/.code={%
+            % from beamerouterthemeinfolines.sty
+            \setbeamercolor*{section in head}{parent=palette tertiary}
+            \setbeamercolor*{subsection in head}{parent=palette primary}
+            \setbeamertemplate{headline}{%
+                \leavevmode%
+                \hbox{%
+                    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+                        \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+                    \end{beamercolorbox}%
+                    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+                        \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+                    \end{beamercolorbox}
+                }%
+                \vskip0pt%
+            }
+        },
+        % 'footline' option: only have footline
+        footline/.code={%
+            % from beamerouterthemeinfolines.sty
+            \setbeamercolor*{author in foot}{parent=palette tertiary}
+            \setbeamercolor*{title in foot}{parent=palette secondary}
+            \setbeamercolor*{date in foot}{parent=palette primary}
+            \setbeamertemplate{page number in head/foot}[totalframenumber]
+            \setbeamertemplate{footline}{%
+                \leavevmode%
+                \hbox{%
+                    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+                        \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+                    \end{beamercolorbox}%
+                    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+                        \usebeamerfont{title in head/foot}\insertshorttitle
+                    \end{beamercolorbox}%
+                    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,rightskip=2ex,sep=0pt]{date in head/foot}%
+                        \hfill%
+                        \usebeamerfont{date in head/foot}%
+                        \insertshortdate{}%
+                        \hfill%
+                        \usebeamercolor[fg]{page number in head/foot}%
+                        \usebeamerfont{page number in head/foot}%
+                        \usebeamertemplate{page number in head/foot}%
+                \end{beamercolorbox}}%
+                \vskip0pt%
+            }
+        },
+        % footline, only with a small box with frame number
+        footline-framenumber/.code={%
+            \setbeamertemplate{footline}{%
+                \hfill
+                \usebeamercolor{title}
+                \begin{tikzpicture}
+                    \node[rectangle, inner sep=1pt, fill=bg, anchor=center] at (0em,0em) {\tiny \textcolor{fg}{\insertframenumber/\inserttotalframenumber}};
+                \end{tikzpicture}
+                \hspace{-0.35em}
+                \vspace{0.25em}
+            }
+        },
+}
+
+\ProcessPgfPackageOptions{/beamerthemeMumbai}
+
+\useinnertheme[shadow=true]{rounded}
+\setbeamertemplate{navigation symbols}{} % remove navigation symbols
+
+% a dark but bright blue shaded color theme
+\definecolor{structurebg}{HTML}{002B5B}
+\definecolor{primary}{HTML}{D2DAFF}
+\definecolor{secondary}{HTML}{4C6793}
+\definecolor{tertiary}{HTML}{002B5B}
+\definecolor{alertfg}{HTML}{D800A6}
+\definecolor{blocktitlebg}{HTML}{410382}
+\definecolor{blocktitlefg}{HTML}{FAEA48}
+\definecolor{blockbodybg}{HTML}{ABD9FF}
+
+\setbeamercolor{structure}{fg=black,bg=structurebg}
+\setbeamercolor{palette primary}{use=structure,fg=structure.bg!20!black,bg=primary} % bottom right block in infolines outer theme
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=secondary} % bottom middle block in infolines outer theme
+\setbeamercolor{palette tertiary}{use=structure,bg=tertiary,fg=white} % bottom left block in infolines outer theme
+
+\setbeamercolor{block title}{fg=blocktitlefg,bg=blocktitlebg}
+\setbeamercolor{block body}{fg=black,bg=blockbodybg!10}
+
+\setbeamercolor{frametitle}{parent=palette primary,bg=gray!15}
+\setbeamercolor{title}{parent=frametitle} % presentation title
+
+\setbeamercolor{item projected}{fg=white,bg=structure.bg!50!black} % changes only enumerate color
+\setbeamercolor{subitem projected}{use=structure,fg=black,bg=structure.bg!50} % changes only enumerate color. \setbeamercolor{enumerate item}{...} wont work
+\setbeamercolor{itemize item}{fg=structure.bg!50!black} % changes only itemize color
+\setbeamercolor{itemize subitem}{fg=structure.bg!50} % changes only itemize color
+
+\setbeamercolor{alerted text}{fg=alertfg}
+\setbeamercolor{caption name}{fg=alerted text.fg}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate items}[circle]
+
+\mode<all>
