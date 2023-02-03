@@ -8,7 +8,7 @@
         % 'infolines' option: have both headline and footline
         infolines/.code={\useoutertheme{infolines}},
         % 'headline' option: only have headline
-        headline/.code={%
+        infolines-headline/.code={%
             % from beamerouterthemeinfolines.sty
             \setbeamercolor*{section in head}{parent=palette tertiary}
             \setbeamercolor*{subsection in head}{parent=palette primary}
@@ -26,7 +26,7 @@
             }
         },
         % 'footline' option: only have footline
-        footline/.code={%
+        infolines-footline/.code={%
             % from beamerouterthemeinfolines.sty
             \setbeamercolor*{author in foot}{parent=palette tertiary}
             \setbeamercolor*{title in foot}{parent=palette secondary}
@@ -54,7 +54,7 @@
             }
         },
         % footline, only with a small box with frame number
-        footline-framenumber/.code={%
+        framenumber-footline/.code={%
             \setbeamertemplate{footline}{%
                 \hfill
                 \usebeamercolor{title}
@@ -65,6 +65,8 @@
                 \vspace{0.25em}
             }
         },
+        % uses miniframes outer theme with the passed option
+        miniframes/.code={\useoutertheme[#1]{miniframes}},
 }
 
 \ProcessPgfPackageOptions{/beamerthemeMumbai}
