@@ -3,7 +3,8 @@
 
 \mode<presentation>
 
-% enhanced slide entry for miniframes-enhanced option
+% source: https://tex.stackexchange.com/a/288581/133968
+% enhanced slide entry for miniframes-enhanced option, where the miniframes of a subsection are separated by space when compiled in compress mode
 \def\enhancedslideentry#1#2#3#4#5#6{%
 	%section number, subsection number, slide number, first/last frame, page number, part number
 	\ifnum#6=\c@part\ifnum#1>0\ifnum#3>0%
@@ -125,8 +126,6 @@
         % uses miniframes outer theme with the passed option
         miniframes/.code={\useoutertheme[#1]{miniframes}},
         miniframes-enhanced/.code={%
-        	% a modified version of miniframes outer theme, where the miniframes of a subsection are separated by space when compiled in compress mode
-        	% source: https://tex.stackexchange.com/a/288581/133968
         	\useoutertheme[#1]{miniframes}
         	\makeatletter
         	\let\slideentry\enhancedslideentry
