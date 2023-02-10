@@ -141,23 +141,25 @@
 \useinnertheme[shadow=true]{rounded}
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 
-% a dark but bright blue shaded color theme
+% a darkish blue shaded color theme
 \definecolor{structurebg}{HTML}{002B5B}
 \definecolor{primary}{HTML}{D2DAFF}
 \definecolor{secondary}{HTML}{14499f}
 \definecolor{tertiary}{HTML}{002B5B}
 \definecolor{alertfg}{HTML}{D800A6}
-\definecolor{blocktitlebg}{HTML}{410382}
-\definecolor{blocktitlefg}{HTML}{FAEA48}
+\definecolor{blocktitlebg}{HTML}{4A0B8D}
 \definecolor{blockbodybg}{HTML}{ABD9FF}
+\definecolor{exampleblocktitlebg}{HTML}{078D39}
 
 \setbeamercolor{structure}{fg=black,bg=structurebg}
-\setbeamercolor{palette primary}{use=structure,fg=structure.bg!20!black,bg=primary} % bottom right block in infolines outer theme
-\setbeamercolor{palette secondary}{use=structure,fg=white,bg=secondary} % bottom middle block in infolines outer theme
-\setbeamercolor{palette tertiary}{use=structure,bg=tertiary,fg=white} % bottom left block in infolines outer theme
+\setbeamercolor{palette primary}{fg=structure.bg!20!black,bg=primary} % bottom right block in infolines outer theme
+\setbeamercolor{palette secondary}{fg=white,bg=secondary} % bottom middle block in infolines outer theme
+\setbeamercolor{palette tertiary}{bg=tertiary,fg=white} % bottom left block in infolines outer theme
 
-\setbeamercolor{block title}{fg=blocktitlefg,bg=blocktitlebg}
+\setbeamercolor{block title}{fg=white,bg=blocktitlebg}
 \setbeamercolor{block body}{fg=black,bg=blockbodybg!10}
+\setbeamercolor{block title alerted}{fg=white,bg=alertfg!70!black}
+\setbeamercolor{block title example}{fg=white,bg=exampleblocktitlebg}
 
 \setbeamercolor{frametitle}{parent=palette primary,bg=gray!15}
 \setbeamercolor{title}{parent=frametitle} % presentation title

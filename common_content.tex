@@ -26,18 +26,27 @@
 \section{Blocks}
 \subsection{Simple blocks}
 \begin{frame}{Blocks}
-    \begin{block}{Block title}
-        Block content
-    \end{block}
-    \begin{example}
-        Example content
-    \end{example}
-    \begin{theorem}
-        Theorem content
-    \end{theorem}
-    \begin{proof}
-        Theorem's proof
-    \end{proof}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{block}{Standard block}
+                Block content
+            \end{block}
+            \begin{theorem}
+                Theorem content
+            \end{theorem}
+            \begin{proof}
+                Theorem's proof
+            \end{proof}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            \begin{example}
+                Example content
+            \end{example}
+            \begin{alertblock}{Alerted block}
+                Content
+            \end{alertblock}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{Blocks as wrappers}
